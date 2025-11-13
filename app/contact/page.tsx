@@ -3,6 +3,7 @@ import Layout from '@/components/Layout/Layout';
 import Container from '@/components/Container/Container';
 import Card from '@/components/Card/Card';
 import ContactForm from '@/components/ContactForm/ContactForm';
+import { submitContactForm } from './actions';
 
 /**
  * SEO Metadata for Contact Page
@@ -17,27 +18,6 @@ export const metadata: Metadata = {
     type: 'website',
   },
 };
-
-/**
- * Handle form submission
- * This can be replaced with actual API call later
- */
-async function handleFormSubmit(data: {
-  name: string;
-  email: string;
-  company?: string;
-  message: string;
-}) {
-  // TODO: Replace with actual API call
-  console.log('Form submission:', data);
-  
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  
-  // For now, always succeed
-  // In production, this would call your API endpoint
-  return Promise.resolve();
-}
 
 export default function Contact() {
   const navItems = [
@@ -101,7 +81,7 @@ export default function Contact() {
                 Send us a Message
               </h2>
               <Card>
-                <ContactForm onSubmit={handleFormSubmit} />
+                <ContactForm onSubmit={submitContactForm} />
               </Card>
             </div>
 
