@@ -25,28 +25,49 @@ describe('Button Component', () => {
       render(<Button>Default Button</Button>);
       
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-blue-600');
+      expect(button).toHaveClass('bg-primary-500');
     });
 
     it('should render with primary variant', () => {
       render(<Button variant="primary">Primary Button</Button>);
       
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-blue-600', 'text-white');
+      expect(button).toHaveClass('bg-primary-500', 'text-white');
     });
 
     it('should render with secondary variant', () => {
       render(<Button variant="secondary">Secondary Button</Button>);
       
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-gray-200', 'text-gray-900');
+      expect(button).toHaveClass('bg-secondary-500', 'text-white');
+    });
+
+    it('should render with accent variant', () => {
+      render(<Button variant="accent">Accent Button</Button>);
+      
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('bg-accent-500', 'text-white');
+    });
+
+    it('should render with outline variant', () => {
+      render(<Button variant="outline">Outline Button</Button>);
+      
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('border-primary-500', 'text-primary-500');
+    });
+
+    it('should render with ghost variant', () => {
+      render(<Button variant="ghost">Ghost Button</Button>);
+      
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('text-primary-500');
     });
 
     it('should render with danger variant', () => {
       render(<Button variant="danger">Delete</Button>);
       
       const button = screen.getByRole('button');
-      expect(button).toHaveClass('bg-red-600', 'text-white');
+      expect(button).toHaveClass('bg-error-500', 'text-white');
     });
 
     it('should render with small size', () => {
@@ -201,6 +222,13 @@ describe('Button Component', () => {
       await user.click(button);
       
       expect(handleClick).toHaveBeenCalledTimes(3);
+    });
+
+    it('should render full width button', () => {
+      render(<Button fullWidth>Full Width</Button>);
+      
+      const button = screen.getByRole('button');
+      expect(button).toHaveClass('w-full');
     });
   });
 });
