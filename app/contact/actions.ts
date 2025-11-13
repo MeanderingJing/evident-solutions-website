@@ -3,11 +3,35 @@
 import type { ContactFormData } from '@/components/ContactForm/ContactForm';
 
 /**
- * Server Action to handle contact form submission
- * This runs on the server and can be called from Client Components
+ * Server Action to handle contact form submission.
+ * This function runs on the server and can be safely called from Client Components.
  * 
- * @param {ContactFormData} data - The form data
- * @returns {Promise<void>}
+ * Currently logs submission data to console. In production, this should:
+ * - Validate data server-side
+ * - Save to database
+ * - Send email notification
+ * - Handle errors appropriately
+ * 
+ * @param {ContactFormData} data - The validated form data from the contact form
+ * @param {string} data.name - The submitter's name
+ * @param {string} data.email - The submitter's email address
+ * @param {string} [data.company] - The submitter's company (optional)
+ * @param {string} data.message - The message content
+ * @returns {Promise<void>} A promise that resolves when submission is processed
+ * @throws {Error} Throws an error if submission fails
+ * 
+ * @example
+ * ```tsx
+ * // In a Client Component
+ * import { submitContactForm } from './actions';
+ * 
+ * await submitContactForm({
+ *   name: 'John Doe',
+ *   email: 'john@example.com',
+ *   company: 'Acme Corp',
+ *   message: 'I need help with test automation.'
+ * });
+ * ```
  */
 export async function submitContactForm(data: ContactFormData): Promise<void> {
   // TODO: Replace with actual API call or database insertion

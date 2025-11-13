@@ -6,7 +6,8 @@ import Card from '@/components/Card/Card';
 import Button from '@/components/Button/Button';
 
 /**
- * SEO Metadata for About Page
+ * SEO Metadata for the About Page.
+ * Optimized for search engines and social media sharing.
  */
 export const metadata: Metadata = {
   title: 'About Us | Evident Solutions LLC',
@@ -19,6 +20,16 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * About page component for Evident Solutions LLC.
+ * Displays company overview, mission, vision, values, team information, and contact CTA.
+ * 
+ * @returns {JSX.Element} The about page with company information and team details
+ * 
+ * @example
+ * This component is automatically rendered at the /about route.
+ * No need to import or use it manually.
+ */
 export default function About() {
   const navItems = [
     { label: 'Home', href: '/' },

@@ -6,7 +6,8 @@ import ContactForm from '@/components/ContactForm/ContactForm';
 import { submitContactForm } from './actions';
 
 /**
- * SEO Metadata for Contact Page
+ * SEO Metadata for the Contact Page.
+ * Optimized for search engines and social media sharing.
  */
 export const metadata: Metadata = {
   title: 'Contact Us | Evident Solutions LLC',
@@ -19,6 +20,16 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Contact page component for Evident Solutions LLC.
+ * Displays contact form and contact information (email, phone, response time).
+ * 
+ * @returns {JSX.Element} The contact page with form and contact details
+ * 
+ * @example
+ * This component is automatically rendered at the /contact route.
+ * No need to import or use it manually.
+ */
 export default function Contact() {
   const navItems = [
     { label: 'Home', href: '/' },

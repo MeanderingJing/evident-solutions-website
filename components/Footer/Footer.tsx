@@ -38,9 +38,15 @@ export interface FooterProps {
 /**
  * Footer component following the Evident Solutions design system.
  * Responsive and mobile-first with a clean, professional layout.
+ * Includes link groups, social media links, and copyright information.
  * 
  * @component
  * @param {FooterProps} props - The component props
+ * @param {string} [props.brand] - The brand/company name (default: "Evident Solutions")
+ * @param {string} [props.description] - Optional brand description
+ * @param {FooterLinkGroup[]} [props.linkGroups] - Array of footer link groups
+ * @param {string} [props.copyright] - Copyright text (default: includes current year)
+ * @param {Array} [props.socialLinks] - Array of social media links with icons
  * @returns {JSX.Element} A styled footer element
  * 
  * @example

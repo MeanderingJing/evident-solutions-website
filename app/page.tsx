@@ -6,7 +6,8 @@ import Card from '@/components/Card/Card';
 import Button from '@/components/Button/Button';
 
 /**
- * SEO Metadata for Home Page
+ * SEO Metadata for the Home Page.
+ * Optimized for search engines and social media sharing.
  */
 export const metadata: Metadata = {
   title: 'Evident Solutions LLC | Test Automation & Quality Assurance Solutions',
@@ -19,6 +20,16 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Home page component for Evident Solutions LLC.
+ * Displays the hero section, services overview, value propositions, and call-to-action sections.
+ * 
+ * @returns {JSX.Element} The home page with hero, services, and CTA sections
+ * 
+ * @example
+ * This component is automatically rendered at the root route (/).
+ * No need to import or use it manually.
+ */
 export default function Home() {
   const navItems = [
     { label: 'Home', href: '/', active: true },
