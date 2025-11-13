@@ -1,7 +1,23 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
 import Layout from '@/components/Layout/Layout';
 import Container from '@/components/Container/Container';
 import Card from '@/components/Card/Card';
 import Button from '@/components/Button/Button';
+
+/**
+ * SEO Metadata for Home Page
+ */
+export const metadata: Metadata = {
+  title: 'Evident Solutions LLC | Test Automation & Quality Assurance Solutions',
+  description: 'Leading provider of test automation solutions and quality assurance services. We help businesses deliver reliable software through comprehensive testing strategies.',
+  keywords: ['test automation', 'quality assurance', 'QA services', 'software testing', 'test automation solutions'],
+  openGraph: {
+    title: 'Evident Solutions LLC | Test Automation Solutions',
+    description: 'Leading provider of test automation solutions and quality assurance services.',
+    type: 'website',
+  },
+};
 
 export default function Home() {
   const navItems = [
@@ -23,8 +39,8 @@ export default function Home() {
     {
       title: 'Services',
       links: [
-        { label: 'Consulting', href: '/services/consulting' },
-        { label: 'Development', href: '/services/development' },
+        { label: 'Test Automation', href: '/services/automation' },
+        { label: 'QA Consulting', href: '/services/consulting' },
         { label: 'Support', href: '/services/support' },
       ],
     },
@@ -45,86 +61,138 @@ export default function Home() {
         <Container>
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6">
-              Technology Solutions
-              <span className="block text-primary-600">That Drive Results</span>
+              Test Automation Solutions
+              <span className="block text-primary-600">That Drive Quality</span>
             </h1>
             <p className="text-lg sm:text-xl text-neutral-700 mb-8 max-w-2xl mx-auto">
-              We deliver innovative software solutions and expert consulting services
-              to help your business thrive in the digital age.
+              Evident Solutions LLC delivers comprehensive test automation and quality assurance
+              services to help your business deliver reliable, high-quality software faster.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="primary">
-                Get Started
-              </Button>
-              <Button size="lg" variant="outline">
-                Learn More
-              </Button>
+              <Link href="/contact">
+                <Button size="lg" variant="primary">
+                  Get Started
+                </Button>
+              </Link>
+              <Link href="/about">
+                <Button size="lg" variant="outline">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* Features Section */}
+      {/* Services Overview Section */}
       <section className="py-16 sm:py-24 bg-white">
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
-              Why Choose Evident Solutions?
+              Our Services
             </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              We combine technical expertise with business acumen to deliver solutions
-              that make a real difference.
+              Comprehensive test automation and QA solutions tailored to your business needs.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card hover>
               <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                Expert Team
+                Test Automation
               </h3>
               <p className="text-neutral-600">
-                Our experienced developers and consultants bring years of industry
-                expertise to every project.
+                Custom test automation frameworks and strategies to accelerate your testing
+                cycles and improve software quality.
               </p>
             </Card>
 
             <Card hover>
               <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                Modern Technology
+                QA Consulting
               </h3>
               <p className="text-neutral-600">
-                We use the latest tools and frameworks to build scalable, maintainable
-                solutions for your business.
+                Expert guidance on quality assurance processes, test strategy development,
+                and best practices implementation.
               </p>
             </Card>
 
             <Card hover>
               <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                Proven Results
+                Continuous Testing
               </h3>
               <p className="text-neutral-600">
-                Track record of successful projects delivering measurable business
-                value and ROI.
+                Integration of testing into your CI/CD pipeline for faster feedback
+                and continuous quality assurance.
               </p>
             </Card>
           </div>
         </Container>
       </section>
 
-      {/* CTA Section */}
+      {/* Why Choose Us Section */}
+      <section className="py-16 sm:py-24 bg-neutral-50">
+        <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-4">
+              Why Choose Evident Solutions LLC?
+            </h2>
+            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+              We combine technical expertise with industry best practices to deliver
+              test automation solutions that make a real difference.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                Expert Team
+              </h3>
+              <p className="text-neutral-600">
+                Our experienced QA engineers and automation specialists bring years of
+                industry expertise to every project.
+              </p>
+            </Card>
+
+            <Card>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                Proven Methodologies
+              </h3>
+              <p className="text-neutral-600">
+                We use industry-leading tools and frameworks to build scalable, maintainable
+                test automation solutions.
+              </p>
+            </Card>
+
+            <Card>
+              <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                Measurable Results
+              </h3>
+              <p className="text-neutral-600">
+                Track record of successful implementations delivering improved test coverage,
+                faster releases, and reduced defects.
+              </p>
+            </Card>
+          </div>
+        </Container>
+      </section>
+
+      {/* Call-to-Action Section */}
       <section className="py-16 sm:py-24 bg-primary-600">
         <Container>
           <div className="text-center text-white">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Ready to Get Started?
+              Ready to Transform Your Testing?
             </h2>
             <p className="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how we can help transform your business with innovative
-              technology solutions.
+              Let&apos;s discuss how Evident Solutions LLC can help you implement effective
+              test automation strategies for your business.
             </p>
-            <Button size="lg" variant="accent">
-              Contact Us Today
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" variant="accent">
+                Contact Us Today
+              </Button>
+            </Link>
           </div>
         </Container>
       </section>
