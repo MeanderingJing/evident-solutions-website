@@ -8,21 +8,40 @@
     "build:static": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "npm run build:static"
+    "deploy": "npm run build:static",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest --testPathPattern=__tests__",
+    "test:integration": "jest --testPathPattern=__tests__/integration",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:all": "npm run test:coverage && npm run test:e2e",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "next": "14.2.33",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.33"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@jest/globals": "^29.7.0",
+    "@playwright/test": "^1.41.1",
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@testing-library/user-event": "^14.5.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.33",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "lint-staged": "^15.5.2",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.33"
+    "typescript": "^5"
   }
 }

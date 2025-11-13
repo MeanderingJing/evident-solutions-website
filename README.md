@@ -66,12 +66,24 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Available Scripts
 
+### Development
 - `npm run dev` - Start the development server
 - `npm run build` - Build the application for production
 - `npm run build:static` - Build static HTML export for GitHub Pages
 - `npm run start` - Start the production server
 - `npm run lint` - Run ESLint to check code quality
 - `npm run deploy` - Build static site for deployment
+
+### Testing
+- `npm run test` - Run all unit tests
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Generate test coverage report
+- `npm run test:unit` - Run only unit tests
+- `npm run test:integration` - Run integration tests
+- `npm run test:e2e` - Run end-to-end tests with Playwright
+- `npm run test:e2e:ui` - Run E2E tests with interactive UI
+- `npm run test:e2e:headed` - Run E2E tests in headed mode (see browser)
+- `npm run test:all` - Run all tests (unit + E2E)
 
 ## TypeScript Configuration
 
@@ -124,6 +136,34 @@ We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 - Pull request process
 - Commit message conventions
 
+## Testing
+
+This project includes a comprehensive testing setup:
+
+- **Jest** for unit and integration testing
+- **React Testing Library** for component testing
+- **Playwright** for end-to-end testing
+- **Husky** for pre-commit hooks
+
+### Quick Start
+
+Run all tests:
+```bash
+npm run test
+```
+
+Run tests with coverage:
+```bash
+npm run test:coverage
+```
+
+Run E2E tests:
+```bash
+npm run test:e2e
+```
+
+For detailed testing documentation, see [TESTING.md](docs/TESTING.md).
+
 ## Learn More
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
@@ -131,6 +171,7 @@ We welcome contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [React Documentation](https://react.dev)
+- [Testing Guide](docs/TESTING.md) - comprehensive testing documentation
 
 ## Deployment
 

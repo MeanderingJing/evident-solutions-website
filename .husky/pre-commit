@@ -1,0 +1,6 @@
+# Run lint-staged to check staged files
+npx lint-staged
+
+# Run tests on staged files
+npm run test -- --bail --findRelatedTests --passWithNoTests
+
